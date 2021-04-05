@@ -6,16 +6,13 @@ export default class Countries extends Component {
         return (
             <div>
                 <ul className="countries">
-                    {this.props.countries.map(country =>(
+                    {this.props.countries.map((country)=>(
                         <li key={country._id}>
-                            <br/>
-                            {country.title}
-                            <br/>
-                            {country.year}
-                            <br/>
-                            {country.phase}
-                            <br/>
-                            {formatCurrency (country.amount)}
+                            <div className="country">
+                                <p>{country.title}</p>
+                                <p>{country.year}</p>
+                                <p>{formatCurrency(country.amount)}</p>
+                            </div>
                         </li>
                     ))}
                 </ul>
@@ -23,3 +20,4 @@ export default class Countries extends Component {
         )
     }
 }
+
